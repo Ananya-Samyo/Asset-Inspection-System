@@ -1,0 +1,158 @@
+
+/* ฟอนต์และการตั้งค่าพื้นฐานทั่วทั้งเว็บ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Kanit', sans-serif;
+  letter-spacing: 0.3px;
+  box-sizing: border-box;   /* ให้ padding / border ไม่ทำให้ layout เพี้ยน */
+}
+
+/* ลิงก์ทั่วเว็บ */
+a {
+  text-decoration: none;
+  color: #2563eb;             /* ฟ้าโทน Tailwind */
+  transition: 0.2s ease;
+}
+a:hover {
+  color: #1e40af;             /* ฟ้าเข้มขึ้นตอน hover */
+}
+
+.pagination{display:flex;justify-content:center;gap:5px;margin-top:10px}
+.pagination button{padding:6px 10px;border-radius:4px;border:none;background:#3b82f6;cursor:pointer}
+.pagination button.active{background:#0056b3;color:white}
+
+/* ปุ่มพื้นฐาน (ถ้ามีใช้ปุ่ม custom) */
+button {
+  font-family: inherit;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: #1e40af;
+}
+
+/* เงา card และกล่องต่าง ๆ */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+}
+
+/* สำหรับหัวข้อหลัก */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+/* ==== Responsive for mobile ==== */
+@media (max-width: 768px) {
+  .pagination {
+    gap: 2px;
+    margin-top: 10px;
+    flex-wrap: wrap; /* ถ้าปุ่มเยอะจะขึ้นบรรทัดใหม่ */
+  }
+
+  .pagination button {
+    padding: 5px 8px;
+    font-size: 12px; /* เพิ่มจาก 11px เป็น 12px */
+    border-radius: 3px;
+  }
+
+  .pagination button.active {
+    background: #1d4ed8; /* สีน้ำเงินเข้มขึ้นหน่อย */
+  }
+
+  .modal-overlay {
+    align-items: flex-start;  /* ให้ modal ขยับไปบน */
+    padding-top: 100px;       /* ระยะห่างจากด้านบน */
+    overflow-y: auto;         /* เพิ่ม scroll ถ้าเนื้อหายาว */
+  }
+
+  .modal-content {
+    width: 90%;               /* ขนาดกว้างขึ้นจาก 85% */
+    max-width: 320px;         /* ขนาดสูงสุดใหญ่ขึ้น */
+    padding: 14px 16px;       /* ขอบในใหญ่ขึ้น */
+    border-radius: 8px;
+  }
+
+  .modal-title {
+    font-size: 14px;          /* ตัวอักษรใหญ่ขึ้นจาก 12px */
+    margin-bottom: 10px;
+  }
+
+  .modal-body {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .asset-img {
+    width: 150px;             /* ย่อภาพใหญ่ขึ้นจาก 100px เป็น 150px */
+    margin-bottom: 12px;
+  }
+
+  .modal-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4px 0;
+    font-size: 16px;          /* ตัวอักษรใหญ่ขึ้นจาก 15px */
+  }
+
+  .label, .value {
+    font-size: 12px;          /* ตัวอักษรใหญ่ขึ้นจาก 10px */
+    width: 100%;
+    text-align: left;
+  }
+
+  .button-row {
+    flex-direction: column;
+    gap: 8px;                 /* ช่องว่างเพิ่มเล็กน้อย */
+    width: 100%;
+  }
+
+  .close-button {
+    width: 100%;
+    font-size: 12px;          /* ตัวอักษรใหญ่ขึ้น */
+    padding: 8px 0;           /* ปรับปุ่มสูงขึ้น */
+    border-radius: 5px;
+  }
+  /* ── Table ── */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  th, td {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+
+  img {
+    max-width: 60px;
+  }
+}
+/* ── QR Scanner ── */
+@media (max-width: 768px) {
+  .qr-scanner-modal {
+    width: 100%;
+    max-width: 340px;
+    padding: 20px;
+  }
+
+  .qr-scanner-modal .close-scanner {
+    font-size: 0.85rem;
+    padding: 4px 12px;
+  }
+  select,
+  select option {
+    font-size: 0.75rem !important; /* ≈ 12px */
+  }
+}
