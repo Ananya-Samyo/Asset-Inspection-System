@@ -58,7 +58,7 @@
 - **JavaScript**
 
 ### Styling
-- **CSS / Tailwind / SCSS (ตามที่มีในโปรเจค)**
+- **CSS**
 
 ---
 
